@@ -2,11 +2,9 @@ package com.example.mycalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.xml.transform.Result
 
 // Class declarations and extending AppCompatActivity
 class MainActivity : AppCompatActivity() {
@@ -20,8 +18,6 @@ class MainActivity : AppCompatActivity() {
         val tvInput = findViewById<TextView>(R.id.tvInput)
         val tvOutput = findViewById<TextView>(R.id.tvOutput)
 
-        val button0 = findViewById<Button>(R.id.button0)
-        val button1 = findViewById<Button>(R.id.button1)
         val button2 = findViewById<Button>(R.id.button2)
         val button3 = findViewById<Button>(R.id.button3)
         val button4 = findViewById<Button>(R.id.button4)
@@ -37,41 +33,69 @@ class MainActivity : AppCompatActivity() {
         val buttonDiv = findViewById<Button>(R.id.buttondiv)
         val buttonMod = findViewById<Button>(R.id.buttonRemainder)
         val buttonEql = findViewById<Button>(R.id.buttoneql)
+        val buttonBack = findViewById<Button>(R.id.buttonBack)
         val buttonClear = findViewById<Button>(R.id.buttonClear)
-        val buttonAllClear = findViewById<Button>(R.id.buttonAllClear)
 
+        //Numbers
+        button0.setOnClickListener { appendNumber("0", true) }
+        button1.setOnClickListener { appendNumber("1", true) }
+        button2.setOnClickListener { appendNumber("2", true) }
+        button3.setOnClickListener { appendNumber("3", true) }
+        button4.setOnClickListener { appendNumber("4", true) }
+        button5.setOnClickListener { appendNumber("5", true) }
+        button6.setOnClickListener { appendNumber("6", true) }
+        button7.setOnClickListener { appendNumber("7", true) }
+        button8.setOnClickListener { appendNumber("8", true) }
+        button9.setOnClickListener { appendNumber("9", true) }
+        buttonDot.setOnClickListener { appendNumber(".", true) }
+        //Operators
+        buttonAdd.setOnClickListener { appendNumber("+", false) }
+        buttonSub.setOnClickListener { appendNumber("-", false) }
+        buttonMul.setOnClickListener { appendNumber("x", false) }
+        buttonDiv.setOnClickListener { appendNumber("/", false) }
+        buttonMod.setOnClickListener { appendNumber("%", false) }
 
-        button0.setOnClickListener {tvInput.text = "0" }
-        button1.setOnClickListener {tvInput.text = "1" }
-        button2.setOnClickListener {tvInput.text = "2" }
-        button3.setOnClickListener {tvInput.text = "3" }
-        button4.setOnClickListener {tvInput.text = "4" }
-        button5.setOnClickListener {tvInput.text = "5" }
-        button6.setOnClickListener {tvInput.text = "6" }
-        button7.setOnClickListener {tvInput.text = "7" }
-        button8.setOnClickListener {tvInput.text = "8" }
-        button9.setOnClickListener {tvInput.text = "9" }
-        buttonDot.setOnClickListener {tvInput.text = "." }
-        buttonAdd.setOnClickListener {tvInput.text = "+" }
-        buttonSub.setOnClickListener {tvInput.text = "-" }
-        buttonMul.setOnClickListener {tvInput.text = "x" }
-        buttonDiv.setOnClickListener {tvInput.text = "/" }
-        buttonMod.setOnClickListener {tvInput.text = "%" }
-        buttonEql.setOnClickListener {tvInput.text = "=" }
-        buttonClear.setOnClickListener {tvInput.text = " " }
-        buttonAllClear.setOnClickListener {tvInput.text = " " }
+        buttonEql.setOnClickListener { appendNumber("=", true) }
 
+        buttonClear.setOnClickListener {
+            tvOutput.text = ""
+            tvOutput.text = ""
+        }
+        buttonBack.setOnClickListener {
+            val string = tvOutput.text.toString()
+
+            if (string.isNotEmpty()) {
+                tvOutput.text = string.substring(0, string.length - 1)
+            }
+            tvInput.text = ""
+        }
+
+//        buttonEql.setOnClickListener {
+//
+//            val text = tvOutput.text.toString()
+//            val expression = ExpressionBuilder(text).build()
+//
+//            val result = expression.evaluate()
+//
+//            val longResult = result.toLong()
+//
+//            if (result == longResult.toDouble()) {
+//                tvInput.text = longResult.toString()
+//            } else {
+//                tvInput.text = result.toString()
+//            }
+//        }
     }
 
-    fun appendNumber(string:String,clear:Boolean){
+    fun appendNumber(string: String, clear: Boolean) {
 
-        if(clear){
-            tvInput.text=""
+        if (clear) {
+            tvInput.text = ""
             tvOutput.append(string)
-        }else{
+        } else {
             tvOutput.append(tvInput.text)
             tvOutput.append(string)
-            tvInput.text=""
+            tvInput.text = ""
         }
     }
 
