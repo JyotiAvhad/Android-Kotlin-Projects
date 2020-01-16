@@ -5,6 +5,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
 
 // Class declarations and extending AppCompatActivity
 class MainActivity : AppCompatActivity() {
@@ -59,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonClear.setOnClickListener {
             tvOutput.text = ""
-            tvOutput.text = ""
+            //tvOutput.text = ""
         }
         buttonBack.setOnClickListener {
             val string = tvOutput.text.toString()
@@ -69,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             }
             tvInput.text = ""
         }
+
 
 //        buttonEql.setOnClickListener {
 //
