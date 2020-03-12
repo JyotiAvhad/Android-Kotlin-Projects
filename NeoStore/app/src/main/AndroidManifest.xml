@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ForgetPwdActivity"/>
+        <activity android:name=".HomeActivity" />
 
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".ForgetPwdActivity" />
+
+        <activity android:name=".RegisterActivity" />
 
         <activity android:name=".LoginActivity">
             <intent-filter>

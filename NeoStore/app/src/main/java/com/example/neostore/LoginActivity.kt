@@ -25,5 +25,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //on add or login new user btn click
+        btn_login_user.setOnClickListener {
+
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
