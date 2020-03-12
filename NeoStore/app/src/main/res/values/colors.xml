@@ -6,4 +6,6 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteLight">#EDEDED</color>
+
+    <color name="colorYellow">#FFBA00</color>
 </resources>

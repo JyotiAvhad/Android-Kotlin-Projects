@@ -37,4 +37,10 @@ dependencies {
 
     //added libraries
     implementation 'com.google.android.material:material:1.2.0-alpha05'
+
+    implementation 'io.github.ivanespitiac:imageslider:1.0.3'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+
 }
