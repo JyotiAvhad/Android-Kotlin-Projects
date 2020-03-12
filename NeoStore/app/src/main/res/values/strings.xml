@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NeoStore</string>
+    <string name="app_name">NeoSTORE</string>
 
     <string name="register_activity_name">Register</string>
 </resources>
