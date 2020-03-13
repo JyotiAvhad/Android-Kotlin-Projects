@@ -1,8 +1,9 @@
-package com.example.neostore
+package com.example.neostore.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.neostore.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -21,6 +22,21 @@ class LoginActivity : AppCompatActivity() {
         //on add or register new user btn click
         btn_register_user.setOnClickListener {
 
+            val username=et_username.text.toString().trim()
+            val pwd=et_pwd.text.toString().trim()
+
+            if (username.isEmpty()){
+                et_username.error="Email Required"
+                et_username.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (pwd.isEmpty()){
+                et_pwd.error="Password Required"
+                et_pwd.requestFocus()
+                return@setOnClickListener
+            }
+
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
@@ -33,4 +49,5 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
 }
