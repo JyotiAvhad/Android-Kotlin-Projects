@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 //use same as retrofit singleton class/instance in java
 object RetrofitObject {
 
-    private const val BASE_URL = ""
+    private const val BASE_URL = "http://staging.php-dev.in:8844/trainingapp/api/users/"
 
     val instance: ApiInterface by lazy {
 
