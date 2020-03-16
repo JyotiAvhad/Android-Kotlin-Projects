@@ -44,6 +44,7 @@
                     android:drawablePadding="10dp"
                     android:hint="Username"
                     android:padding="10dp"
+                    android:text="lol@gmail.com"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhiteLight" />
 
@@ -57,6 +58,7 @@
                     android:drawableLeft="@drawable/password_icon"
                     android:drawablePadding="10dp"
                     android:hint="Password"
+                    android:text="lol1234"
                     android:padding="10dp"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhiteLight" />

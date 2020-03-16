@@ -48,8 +48,8 @@ class LoginActivity : AppCompatActivity() {
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
 
-//                        Toast.makeText(applicationContext, "User login unsuccessful.", Toast.LENGTH_SHORT).show()
-                        Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "User login unsuccessful.", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT).show()
 
                     }
 
@@ -58,22 +58,22 @@ class LoginActivity : AppCompatActivity() {
                         response: Response<DefaultResponse>
                     ) {
 //
-                        if (response.body()!=null){
-                            if (response.body()?.message.equals("success")){
+                        if (response.body()!=null) {
+                            if (response.body()?.status==200) {
 
-//                                val intent = Intent(applicationContext, HomeActivity::class.java)
+                                val intent = Intent(applicationContext, HomeActivity::class.java)
 
-                                Toast.makeText(applicationContext,response.body()?.message,Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    applicationContext,
+                                    response.body()?.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
 
-//                                startActivity(intent)
+                                startActivity(intent)
                             }
                         }
-
-
                     }
-
                 })
-
         }
 
         //on forget pwd click
