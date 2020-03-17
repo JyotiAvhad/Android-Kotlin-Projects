@@ -8,6 +8,6 @@ data class RegisterUserDataInput(
     val password : String,
     val confirm_password : String,
     val gender : String,
-    val phone_no : Int
+    val phone_no : String
 
 )

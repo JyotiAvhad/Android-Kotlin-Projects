@@ -39,8 +39,8 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Log.d(applicationContext.toString(),"Username is : "+et_username.text.toString())
-            Log.d(applicationContext.toString(),"Password is : "+et_pwd.text.toString())
+            Log.d(applicationContext.toString(), "Username is : " + et_username.text.toString())
+            Log.d(applicationContext.toString(), "Password is : " + et_pwd.text.toString())
 
             //retrofit api calling - login
             RetrofitObject.retrofit.loginUser(userName, pwd)
@@ -49,7 +49,8 @@ class LoginActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
 
 //                        Toast.makeText(applicationContext, "User login unsuccessful.", Toast.LENGTH_SHORT).show()
-                        Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT)
+                            .show()
 
                     }
 
@@ -60,26 +61,27 @@ class LoginActivity : AppCompatActivity() {
 
                         if (response.isSuccessful) {
 
-                                //login successful open home screen
-                                val intent = Intent(applicationContext, HomeActivity::class.java)
+                            //login successful open home screen
+                            val intent = Intent(applicationContext, HomeActivity::class.java)
 
-                                Toast.makeText(
+                            Toast.makeText(
                                     applicationContext,
-                                    response.body()?.message,
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                            response.body()?.message,
+                            Toast.LENGTH_SHORT
+                            ).show()
 
-                                startActivity(intent)
+                            startActivity(intent)
 
                         }
-                        else
 
                         //login unsuccessful
+                        else {
                             Toast.makeText(
                                 applicationContext,
                                 response.body()?.message,
                                 Toast.LENGTH_SHORT
                             ).show()
+                        }
                     }
                 })
         }
@@ -97,8 +99,5 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
-
     }
-
 }

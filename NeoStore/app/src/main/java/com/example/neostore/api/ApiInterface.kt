@@ -1,5 +1,6 @@
 package com.example.neostore.api
 
+import com.example.neostore.models.ForgotPwdResponse
 import com.example.neostore.models.LoginResponse
 import com.example.neostore.models.RegisterResponse
 import retrofit2.Call
@@ -19,7 +20,7 @@ interface ApiInterface {
 
     ): Call<LoginResponse>
 
-
+    //register user
     @FormUrlEncoded
     @POST("register")
     fun registerUser(
@@ -34,5 +35,13 @@ interface ApiInterface {
 
     ): Call<RegisterResponse>
 
+    //forgot user password
+    @FormUrlEncoded
+    @POST("forgot")
+    fun forgotUserPwd(
+
+        @Field("email") email: String
+
+    ): Call<ForgotPwdResponse>
 
 }
