@@ -1,6 +1,6 @@
 package com.example.neostore.models
 
-data class UserDataInput(
+data class LoginUserDataInput(
 
     val id : Int,
     val role_id : Int,

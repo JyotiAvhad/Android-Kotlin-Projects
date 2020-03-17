@@ -40,6 +40,7 @@
                         android:textSize="40dp" />
 
                     <EditText
+                        android:id="@+id/et_firstName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
@@ -52,6 +53,7 @@
                         android:textColorHint="@color/colorWhiteLight" />
 
                     <EditText
+                        android:id="@+id/et_lastName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -64,6 +66,7 @@
                         android:textColorHint="@color/colorWhiteLight" />
 
                     <EditText
+                        android:id="@+id/et_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -76,6 +79,7 @@
                         android:textColorHint="@color/colorWhiteLight" />
 
                     <EditText
+                        android:id="@+id/et_reg_pwd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -88,6 +92,7 @@
                         android:textColorHint="@color/colorWhiteLight" />
 
                     <EditText
+                        android:id="@+id/et_confirmPwd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -100,6 +105,7 @@
                         android:textColorHint="@color/colorWhiteLight" />
 
                     <RadioGroup
+                        android:id="@+id/radioGroup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -113,6 +119,8 @@
                             android:textSize="18dp" />
 
                         <RadioButton
+                            android:checked="true"
+                            android:id="@+id/rbtn_male"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
@@ -122,6 +130,7 @@
                             android:textSize="16dp" />
 
                         <RadioButton
+                            android:id="@+id/rbtn_female"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -133,6 +142,7 @@
                     </RadioGroup>
 
                     <EditText
+                        android:id="@+id/et_phoneNumber"
                         android:inputType="phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -146,7 +156,6 @@
                         android:textColorHint="@color/colorWhiteLight" />
 
                     <CheckBox
-                        android:id="@+id/tv_login_forget_pwd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -159,6 +168,7 @@
                         android:textSize="16dp" />
 
                     <Button
+                        android:id="@+id/btn_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"

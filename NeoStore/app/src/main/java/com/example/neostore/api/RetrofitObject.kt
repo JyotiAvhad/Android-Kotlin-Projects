@@ -8,7 +8,7 @@ object RetrofitObject {
 
     private const val BASE_URL = "http://staging.php-dev.in:8844/trainingapp/api/users/"
 
-    val instance: ApiInterface by lazy {
+    val retrofit: ApiInterface by lazy {
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
