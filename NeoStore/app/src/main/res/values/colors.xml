@@ -8,4 +8,9 @@
     <color name="colorWhiteLight">#EDEDED</color>
 
     <color name="colorYellow">#FFBA00</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorPrimaryBlack">#111111</color>
+    <color name="colorBlackLight">#4f4f4f</color>
+    <color name="colorAccentBlack">#2c2b2b</color>
 </resources>

@@ -44,7 +44,7 @@
                     android:hint="Username"
                     android:maxLines="1"
                     android:padding="10dp"
-                    android:text="lol@gmail.com"
+                    android:text="abz@gmail.com"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhiteLight" />
 
@@ -59,7 +59,7 @@
                     android:hint="Password"
                     android:maxLines="1"
                     android:padding="10dp"
-                    android:text="lol1234"
+                    android:text="abzabz"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhiteLight" />
 
