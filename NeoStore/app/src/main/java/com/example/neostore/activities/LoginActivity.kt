@@ -23,67 +23,72 @@ class LoginActivity : AppCompatActivity() {
         //on add or login new user btn click
         btn_login_user.setOnClickListener {
 
-            val userName = et_username.text.toString().trim()
-            val pwd = et_pwd.text.toString().trim()
 
-            //validations
-            if (userName.isEmpty()) {
-                et_username.error = "Email Required"
-                et_username.requestFocus()
-                return@setOnClickListener
-            }
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
 
-            if (pwd.isEmpty()) {
-                et_pwd.error = "Password Required"
-                et_pwd.requestFocus()
-                return@setOnClickListener
-            }
 
-            Log.d(applicationContext.toString(), "Username is : " + et_username.text.toString())
-            Log.d(applicationContext.toString(), "Password is : " + et_pwd.text.toString())
-
-            //retrofit api calling - login
-            RetrofitObject.retrofit.loginUser(userName, pwd)
-                .enqueue(object : Callback<LoginResponse> {
-
-                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-
-//                        Toast.makeText(applicationContext, "User login unsuccessful.", Toast.LENGTH_SHORT).show()
-                        Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT)
-                            .show()
-
-                    }
-
-                    override fun onResponse(
-                        call: Call<LoginResponse>,
-                        response: Response<LoginResponse>
-                    ) {
-
-                        if (response.isSuccessful) {
-
-                            //login successful open home screen
-                            val intent = Intent(applicationContext, HomeActivity::class.java)
-
-                            Toast.makeText(
-                                    applicationContext,
-                            response.body()?.message,
-                            Toast.LENGTH_SHORT
-                            ).show()
-
-                            startActivity(intent)
-
-                        }
-
-                        //login unsuccessful
-                        else {
-                            Toast.makeText(
-                                applicationContext,
-                                response.body()?.message,
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-                })
+//            val userName = et_username.text.toString().trim()
+//            val pwd = et_pwd.text.toString().trim()
+//
+//            //validations
+//            if (userName.isEmpty()) {
+//                et_username.error = "Email Required"
+//                et_username.requestFocus()
+//                return@setOnClickListener
+//            }
+//
+//            if (pwd.isEmpty()) {
+//                et_pwd.error = "Password Required"
+//                et_pwd.requestFocus()
+//                return@setOnClickListener
+//            }
+//
+//            Log.d(applicationContext.toString(), "Username is : " + et_username.text.toString())
+//            Log.d(applicationContext.toString(), "Password is : " + et_pwd.text.toString())
+//
+//            //retrofit api calling - login
+//            RetrofitObject.retrofit.loginUser(userName, pwd)
+//                .enqueue(object : Callback<LoginResponse> {
+//
+//                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+//
+////                        Toast.makeText(applicationContext, "User login unsuccessful.", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT)
+//                            .show()
+//
+//                    }
+//
+//                    override fun onResponse(
+//                        call: Call<LoginResponse>,
+//                        response: Response<LoginResponse>
+//                    ) {
+//
+//                        if (response.isSuccessful) {
+//
+//                            //login successful open home screen
+//                            val intent = Intent(applicationContext, HomeActivity::class.java)
+//
+//                            Toast.makeText(
+//                                    applicationContext,
+//                            response.body()?.message,
+//                            Toast.LENGTH_SHORT
+//                            ).show()
+//
+//                            startActivity(intent)
+//
+//                        }
+//
+//                        //login unsuccessful
+//                        else {
+//                            Toast.makeText(
+//                                applicationContext,
+//                                response.body()?.message,
+//                                Toast.LENGTH_SHORT
+//                            ).show()
+//                        }
+//                    }
+//                })
         }
 
         //on forget pwd click
