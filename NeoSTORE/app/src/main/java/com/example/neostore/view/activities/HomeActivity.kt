@@ -3,6 +3,8 @@ package com.example.neostore.view.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -71,11 +73,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
 
-//        val toggle = ActionBarDrawerToggle(
-//            this, drawerLayout, toolbar, 0, 0
-//        )
-//        drawerLayout.addDrawerListener(toggle)
-//        toggle.syncState()
+        val toggle = ActionBarDrawerToggle(
+            this, main_drawer_layout, main_toolbar, 0, 0
+        )
+        main_drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
         main_navigation_view.setNavigationItemSelectedListener(this)
     }
 
@@ -86,11 +88,35 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        var fragment: Fragment
         when (item.itemId) {
-//            R.id.nav_profile -> {
-//                Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-//            }
+            R.id.homeDrFragment -> {
+                main_toolbar?.title = "Home"
+                fragment = HomeFragment()
+                loadFragment(fragment)
+                true
+            }
+            R.id.favDrFragment -> {
+                main_toolbar?.title = "Favorite"
+                fragment = FavoriteFragment()
+                loadFragment(fragment)
+                true
+            }
+            R.id.bagDrFragment -> {
+                main_toolbar?.title = "Bag"
+                fragment = BagFragment()
+                loadFragment(fragment)
+                true
+            }
+            R.id.profileDrFragment -> {
+                main_toolbar?.title = "Profile"
+                fragment = ProfileFragment()
+                loadFragment(fragment)
+                true
+            }
+            else -> false
         }
+
         main_drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
