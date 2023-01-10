@@ -33,6 +33,19 @@
 
             <!--            </com.google.android.material.appbar.AppBarLayout>-->
 
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_sv_categories"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/layout_categories"
+                    layout="@layout/categories_list_layout" />
+
+            </HorizontalScrollView>
+
             <RelativeLayout
                 android:id="@+id/relative_layout"
                 android:name="androidx.navigation.fragment.NavHostFragment"
