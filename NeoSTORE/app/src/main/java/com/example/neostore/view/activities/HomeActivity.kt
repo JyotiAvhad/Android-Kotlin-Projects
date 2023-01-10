@@ -7,9 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.neostore.R
 import com.example.neostore.view.fragments.BagFragment
 import com.example.neostore.view.fragments.FavoriteFragment
@@ -77,10 +75,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun loadFragment(fragment: Fragment) {
+
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_host, fragment)
+            .replace(R.id.relative_layout, fragment)
+            .addToBackStack(null)
             .commit()
     }
+
 
     //setting navigation fragments
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
