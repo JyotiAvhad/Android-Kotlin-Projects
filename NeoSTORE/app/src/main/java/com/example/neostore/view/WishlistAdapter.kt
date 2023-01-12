@@ -10,42 +10,35 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neostore.R
-import com.example.neostore.view.activities.HomeActivity
-import com.example.neostore.view.activities.ProductDetailActivity
-import kotlinx.android.synthetic.main.item_list_layout.view.*
+import kotlinx.android.synthetic.main.item_wishlist_layout.view.*
 
 
-class RecyclerGridAdapter(var prodNameList: List<ProductListModel>) : RecyclerView.Adapter<RecyclerGridAdapter.ViewHolder>() {
+class WishlistAdapter(var wNameList: List<ProductWishListModel>) : RecyclerView.Adapter<WishlistAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_list_layout, parent, false)
+            .inflate(R.layout.item_wishlist_layout, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val productListModel = prodNameList[position]
-        holder.productImg.setImageResource(productListModel.pImage)
-        holder.productName.text = productListModel.pName
-        holder.productPrice.text = productListModel.pPrice.toString()
-        var context = holder.itemView.context
-        holder.productCard.setOnClickListener {
-            val intent = Intent(context,ProductDetailActivity::class.java)
-            context.startActivity(intent)
-        }
+        val productListModel = wNameList[position]
+        holder.productImg.setImageResource(productListModel.wImage)
+        holder.productName.text = productListModel.wName
+        holder.productPrice.text = productListModel.wPrice.toString()
+
 
     }
 
     override fun getItemCount(): Int {
-        return prodNameList.size
+        return wNameList.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var productImg: ImageView = itemView.iv_product_img
         var productName: TextView = itemView.tv_product_name
         var productPrice: TextView = itemView.tv_product_price
-        var productCard: CardView = itemView.cv_item_img
     }
 
 

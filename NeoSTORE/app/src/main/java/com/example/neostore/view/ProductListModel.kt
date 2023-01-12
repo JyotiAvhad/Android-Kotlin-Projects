@@ -1,4 +1,4 @@
-package com.example.neostore.view.fragments
+package com.example.neostore.view
 
 data class ProductListModel(
     val pImage: Int,

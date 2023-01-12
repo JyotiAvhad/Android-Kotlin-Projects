@@ -32,6 +32,17 @@
     <string name="sofa">Sofa</string>
     <string name="cupboard">Cupboard</string>
     <string name="lamb">Lamb</string>
+    <string name="detail">Detail</string>
+    <string name="product_name">Product Name</string>
+    <string name="base_price">Base Price</string>
+    <string name="offer_price">Offer Price</string>
+    <string name="offer_percentage">Offer Percentage</string>
+    <string name="product_description">Product Description</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="move_to_bag">Move To Bag</string>
+    <string name="add_to_wishlist">Add To Wishlist</string>
+    <string name="add_to_bag">Add To Bag</string>
+    <string name="product_details">Product Details</string>
 
 
 </resources>

@@ -1,6 +1,5 @@
 package com.example.neostore.view.fragments
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.neostore.R
+import com.example.neostore.view.ProductListModel
 import com.example.neostore.view.RecyclerGridAdapter
-import kotlinx.android.synthetic.main.categories_list_layout.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
