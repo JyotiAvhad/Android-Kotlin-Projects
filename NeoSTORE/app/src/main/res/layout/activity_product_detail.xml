@@ -7,7 +7,7 @@
     tools:context=".view.activities.ProductDetailActivity">
 
     <include
-        android:id="@+id/layout_home_tab"
+        android:id="@+id/layout_prd_detail_tab"
         layout="@layout/custom_tab_detail" />
 
     <ScrollView
@@ -15,7 +15,7 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_home_tab">
+        app:layout_constraintTop_toBottomOf="@id/layout_prd_detail_tab">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

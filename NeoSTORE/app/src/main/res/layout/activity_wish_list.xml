@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragments.WishListFragment">
+    tools:context=".view.activities.WishListActivity">
 
     <include
         android:id="@+id/layout_wishlist"
@@ -13,7 +13,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_card_wishlist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/layout_wishlist" />
 
 

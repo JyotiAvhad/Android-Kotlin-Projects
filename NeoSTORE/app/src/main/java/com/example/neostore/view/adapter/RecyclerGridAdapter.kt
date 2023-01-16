@@ -1,4 +1,4 @@
-package com.example.neostore.view
+package com.example.neostore.view.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neostore.R
-import com.example.neostore.view.activities.HomeActivity
 import com.example.neostore.view.activities.ProductDetailActivity
+import com.example.neostore.view.model.ProductListModel
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
 

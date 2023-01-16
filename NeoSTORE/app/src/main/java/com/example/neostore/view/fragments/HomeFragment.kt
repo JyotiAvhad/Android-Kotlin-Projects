@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.neostore.R
-import com.example.neostore.view.ProductListModel
-import com.example.neostore.view.RecyclerGridAdapter
+import com.example.neostore.view.model.ProductListModel
+import com.example.neostore.view.adapter.RecyclerGridAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
