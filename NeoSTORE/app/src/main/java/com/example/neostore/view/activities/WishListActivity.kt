@@ -1,16 +1,11 @@
 package com.example.neostore.view.activities
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.neostore.R
 import com.example.neostore.view.adapter.WishlistAdapter
-import com.example.neostore.view.model.ProductWishListModel
+import com.example.neostore.view.models.ProductWishListModel
 import kotlinx.android.synthetic.main.activity_wish_list.*
 import kotlinx.android.synthetic.main.custom_tab_wishlist.*
 

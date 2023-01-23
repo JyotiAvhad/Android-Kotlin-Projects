@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neostore.R
 import com.example.neostore.view.activities.ProductDetailActivity
-import com.example.neostore.view.model.ProductListModel
+import com.example.neostore.view.models.ProductListModel
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
 
