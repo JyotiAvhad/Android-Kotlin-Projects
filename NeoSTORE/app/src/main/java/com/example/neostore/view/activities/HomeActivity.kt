@@ -1,17 +1,13 @@
 package com.example.neostore.view.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.neostore.R
 import com.example.neostore.view.fragments.BagFragment
 import com.example.neostore.view.fragments.FavoriteFragment
@@ -19,8 +15,10 @@ import com.example.neostore.view.fragments.HomeFragment
 import com.example.neostore.view.fragments.ProfileFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.custom_tab_home.*
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
+
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
@@ -36,9 +34,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //set toolbar to action bar
         setSupportActionBar(main_toolbar)
-
-        navController = findNavController(R.id.fragment_host)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        iv_ic_menu.setOnClickListener {
+            main_drawer_layout.openDrawer(Gravity.LEFT)
+        }
 
         //setting bottom fragments
         loadFragment(HomeFragment.newInstance())
@@ -73,20 +71,19 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
 
-        val toggle = ActionBarDrawerToggle(
-            this, main_drawer_layout, main_toolbar, 0, 0
-        )
-        main_drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
         main_navigation_view.setNavigationItemSelectedListener(this)
     }
 
     private fun loadFragment(fragment: Fragment) {
+
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_host, fragment)
+            .replace(R.id.relative_layout, fragment)
+            .addToBackStack(null)
             .commit()
     }
 
+
+    //setting navigation fragments
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var fragment: Fragment
         when (item.itemId) {

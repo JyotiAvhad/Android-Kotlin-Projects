@@ -13,4 +13,7 @@
     <color name="red_500">#E91B1A</color>
     <color name="red_700">#BB0100</color>
 
+    <color name="gray_200">#EDEDED</color>
+    <color name="black_800">#282627</color>
+
 </resources>

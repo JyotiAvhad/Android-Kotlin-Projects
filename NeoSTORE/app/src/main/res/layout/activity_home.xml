@@ -16,26 +16,38 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-<!--            <include-->
-<!--                layout="@layout/content_main"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"/>-->
+            <include
+                android:id="@+id/layout_home_tab"
+                layout="@layout/custom_tab_home" />
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/main_appbar"
-                android:background="@color/white"
+            <!--            <com.google.android.material.appbar.AppBarLayout-->
+            <!--                android:id="@+id/main_appbar"-->
+            <!--                android:background="@color/white"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content">-->
+
+            <!--                <androidx.appcompat.widget.Toolbar-->
+            <!--                    android:id="@+id/main_toolbar"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="?attr/actionBarSize" />-->
+
+            <!--            </com.google.android.material.appbar.AppBarLayout>-->
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_sv_categories"
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/main_toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize" />
+                <include
+                    android:id="@+id/layout_categories"
+                    layout="@layout/categories_list_layout" />
 
-            </com.google.android.material.appbar.AppBarLayout>
+            </HorizontalScrollView>
 
-            <fragment
-                android:id="@+id/fragment_host"
+            <RelativeLayout
+                android:id="@+id/relative_layout"
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -60,7 +72,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/drawer_navigation"/>
+            app:menu="@menu/drawer_navigation" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
 
