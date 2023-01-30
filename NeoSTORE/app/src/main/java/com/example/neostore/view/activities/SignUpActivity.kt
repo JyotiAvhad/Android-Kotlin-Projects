@@ -17,6 +17,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SignUpActivity : AppCompatActivity() {
+
+    lateinit var registerResData: RegisterDataResponse
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -73,22 +76,31 @@ class SignUpActivity : AppCompatActivity() {
 
             //retrofit api calling - register
             RetrofitClient.retrofit
-                .registerUser(firstName, lastName, email, pwd, confirmPwd)
+                .registerUser(
+                    firstName,
+                    lastName,
+                    email,
+                    pwd,
+                    confirmPwd,
+                    gender = "M",
+                    phone_no = "9999999990"
+                )
                 .enqueue(object : Callback<RegisterDataResponse> {
                     override fun onResponse(
                         call: Call<RegisterDataResponse>,
                         response: Response<RegisterDataResponse>
                     ) {
 
+                        var res = response
                         //registration successful
-                        if (response.isSuccessful) {
+                        if (response.isSuccessful && response.body() != null) {
                             Toast.makeText(
                                 applicationContext,
-                                response.body()?.message,
+                                res.body()?.message,
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            Log.d("TAG", "onResponse success: "+ response.body()?.message)
+                            Log.d("TAG", "onResponse success: " + res.body()?.message)
                             val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
                             startActivity(intent)
                             finish()
@@ -104,14 +116,14 @@ class SignUpActivity : AppCompatActivity() {
                             ).show()
                         }
 
-                        Log.d("TAG", "onResponse unsuccessful: "+  response.body()?.message,)
+                        Log.d("TAG", "onResponse unsuccessful: " + response.body()?.message)
                     }
 
                     override fun onFailure(call: Call<RegisterDataResponse>, t: Throwable) {
                         Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT)
                             .show()
 
-                        Log.d("TAG", "onFailure: ")
+                        Log.d("TAG", "onFailure:${t.message.toString()} ")
                     }
 
                 })

@@ -19,8 +19,8 @@ interface ApiInterface {
         @Field("email") email: String,
         @Field("password") reg_password: String,
         @Field("confirm_password") confirm_password: String,
-//        @Field("gender") gender: String,
-//        @Field("phone_no") phone_no: String
+        @Field("gender") gender: String,
+        @Field("phone_no") phone_no: String
 
     ): Call<RegisterDataResponse>
 
