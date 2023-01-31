@@ -1,4 +1,4 @@
-package com.example.neostore.view.api
+package com.example.neostore.view.model
 
 data class RegisterDataResponse(
 

@@ -1,4 +1,4 @@
-package com.example.neostore.view.fragments
+package com.example.neostore.view.view.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.neostore.R
-import com.example.neostore.view.models.ProductListModel
-import com.example.neostore.view.adapter.RecyclerGridAdapter
+import com.example.neostore.view.model.ProductListModel
+import com.example.neostore.view.view.adapter.RecyclerGridAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {

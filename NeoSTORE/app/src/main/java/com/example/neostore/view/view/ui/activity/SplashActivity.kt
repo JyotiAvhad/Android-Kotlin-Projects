@@ -1,4 +1,4 @@
-package com.example.neostore.view.activities
+package com.example.neostore.view.view.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package com.example.neostore.view.adapter
+package com.example.neostore.view.view.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neostore.R
-import com.example.neostore.view.activities.ProductDetailActivity
-import com.example.neostore.view.models.ProductListModel
+import com.example.neostore.view.view.ui.activity.ProductDetailActivity
+import com.example.neostore.view.model.ProductListModel
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
 
@@ -30,7 +30,7 @@ class RecyclerGridAdapter(var prodNameList: List<ProductListModel>) : RecyclerVi
         holder.productPrice.text = productListModel.pPrice.toString()
         var context = holder.itemView.context
         holder.productCard.setOnClickListener {
-            val intent = Intent(context,ProductDetailActivity::class.java)
+            val intent = Intent(context, ProductDetailActivity::class.java)
             context.startActivity(intent)
         }
 

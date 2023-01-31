@@ -1,4 +1,4 @@
-package com.example.neostore.view.models
+package com.example.neostore.view.model
 
 data class ProductListModel(
     val pImage: Int,
