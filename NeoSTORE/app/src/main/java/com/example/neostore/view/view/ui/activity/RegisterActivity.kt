@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.neostore.R
 import com.example.neostore.view.model.RegisterDataResponse
-import com.example.neostore.view.repository.RetrofitClient
+import com.example.neostore.view.network.RetrofitClient
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import retrofit2.Call
 import retrofit2.Callback

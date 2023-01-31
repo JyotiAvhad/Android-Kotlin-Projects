@@ -1,4 +1,4 @@
-package com.example.neostore.view.repository
+package com.example.neostore.view.network
 
 import com.example.neostore.view.model.LoginResponse
 import com.example.neostore.view.model.RegisterDataResponse

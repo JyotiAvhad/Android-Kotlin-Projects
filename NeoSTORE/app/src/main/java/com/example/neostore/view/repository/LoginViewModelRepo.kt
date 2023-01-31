@@ -1,4 +1,4 @@
-package com.example.neostore.view.viewmodel
+package com.example.neostore.view.repository
 
 import android.content.Context
 import android.util.Log
@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import com.example.neostore.view.model.LoginResponse
-import com.example.neostore.view.repository.RetrofitClient
+import com.example.neostore.view.network.RetrofitClient
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,4 +1,4 @@
-package com.example.neostore.view.repository
+package com.example.neostore.view.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
