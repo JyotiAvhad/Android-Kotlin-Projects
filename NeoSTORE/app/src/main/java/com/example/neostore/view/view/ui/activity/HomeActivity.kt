@@ -1,4 +1,4 @@
-package com.example.neostore.view.activities
+package com.example.neostore.view.view.ui.activity
 
 import android.os.Bundle
 import android.view.Gravity
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.neostore.R
-import com.example.neostore.view.fragments.BagFragment
-import com.example.neostore.view.fragments.FavoriteFragment
-import com.example.neostore.view.fragments.HomeFragment
-import com.example.neostore.view.fragments.ProfileFragment
+import com.example.neostore.view.view.ui.fragment.BagFragment
+import com.example.neostore.view.view.ui.fragment.FavoriteFragment
+import com.example.neostore.view.view.ui.fragment.HomeFragment
+import com.example.neostore.view.view.ui.fragment.ProfileFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.custom_tab_home.*

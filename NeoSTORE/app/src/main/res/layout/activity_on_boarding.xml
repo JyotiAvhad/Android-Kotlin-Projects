@@ -7,7 +7,7 @@
     android:background="@drawable/bg_get_started"
     android:paddingStart="25dp"
     android:paddingEnd="25dp"
-    tools:context=".view.activities.OnBoardingActivity">
+    tools:context=".view.view.ui.activity.OnBoardingActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_make_your"

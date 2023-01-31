@@ -1,11 +1,11 @@
-package com.example.neostore.view.activities
+package com.example.neostore.view.view.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.neostore.R
-import com.example.neostore.view.adapter.WishlistAdapter
-import com.example.neostore.view.models.ProductWishListModel
+import com.example.neostore.view.model.ProductWishListModel
+import com.example.neostore.view.view.adapter.WishlistAdapter
 import kotlinx.android.synthetic.main.activity_wish_list.*
 import kotlinx.android.synthetic.main.custom_tab_wishlist.*
 

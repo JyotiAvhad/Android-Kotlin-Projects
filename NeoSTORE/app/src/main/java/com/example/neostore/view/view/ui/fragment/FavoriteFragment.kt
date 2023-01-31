@@ -1,4 +1,4 @@
-package com.example.neostore.view.fragments
+package com.example.neostore.view.view.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.neostore.view.adapter
+package com.example.neostore.view.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neostore.R
-import com.example.neostore.view.models.ProductWishListModel
+import com.example.neostore.view.model.ProductWishListModel
 import kotlinx.android.synthetic.main.item_wishlist_layout.view.*
 
 

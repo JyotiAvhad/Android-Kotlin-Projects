@@ -1,4 +1,4 @@
-package com.example.neostore.view.activities
+package com.example.neostore.view.view.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,7 @@ class ProductDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product_detail)
 
         btn_add_to_wishlist.setOnClickListener {
-            val intent = Intent(this,WishListActivity::class.java)
+            val intent = Intent(this, WishListActivity::class.java)
             startActivity(intent)
         }
 

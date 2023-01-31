@@ -7,7 +7,7 @@
     android:background="@drawable/bg_img"
     android:paddingStart="25dp"
     android:paddingEnd="25dp"
-    tools:context=".view.activities.LoginActivity">
+    tools:context=".view.view.ui.activity.LoginActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_hello"
@@ -33,6 +33,7 @@
         android:drawablePadding="15dp"
         android:hint="@string/str_username"
         android:padding="15dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +50,7 @@
         android:drawablePadding="15dp"
         android:hint="@string/str_pwd"
         android:padding="15dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,12 +62,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/str_login"
-        android:textSize="14sp"
+        android:background="@drawable/rec_red_border"
         android:padding="14dp"
+        android:text="@string/str_login"
         android:textAllCaps="false"
         android:textColor="@color/red_500"
-        android:background="@drawable/rec_red_border"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_password" />

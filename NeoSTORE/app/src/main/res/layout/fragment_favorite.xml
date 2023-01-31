@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EA6894"
-    tools:context=".view.fragments.FavoriteFragment">
+    tools:context=".view.view.ui.fragment.FavoriteFragment">
 
     <TextView
         android:layout_width="match_parent"

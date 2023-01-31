@@ -1,10 +1,10 @@
-package com.example.neostore.view.api
+package com.example.neostore.view.repository
 
+import com.example.neostore.view.model.LoginResponse
+import com.example.neostore.view.model.RegisterDataResponse
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiInterface {
@@ -23,6 +23,17 @@ interface ApiInterface {
         @Field("phone_no") phone_no: String
 
     ): Call<RegisterDataResponse>
+
+    //login user
+    @FormUrlEncoded
+    @POST("login")
+    fun loginUser(
+
+        @Field("email") email: String,
+        @Field("password") password: String
+
+    ): Call<LoginResponse>
+
 
 
 }

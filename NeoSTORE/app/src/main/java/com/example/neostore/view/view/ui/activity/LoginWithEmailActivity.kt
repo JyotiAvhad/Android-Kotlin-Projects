@@ -1,4 +1,4 @@
-package com.example.neostore.view.activities
+package com.example.neostore.view.view.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,7 @@ class LoginWithEmailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login_with_email)
 
         tv_signup.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }
