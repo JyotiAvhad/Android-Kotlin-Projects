@@ -14,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
 
     private var loginViewModel: LoginViewModel? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -27,8 +26,9 @@ class LoginActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener {
 
-            val email = ed_username.text.toString()
-            val password = ed_password.text.toString()
+            val email = ed_username.text.toString().trim()
+            val password = ed_password.text.toString().trim()
+
             when {
                 email.isEmpty() -> {
                     ed_username.error = "Please enter valid username"
@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                     loginViewModel?.loginUser(email, password)
                         ?.observe(this, Observer { userLogin ->
                             if(userLogin!=null){
-                            Toast.makeText(applicationContext, "Login Success", Toast.LENGTH_SHORT)
+                            Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
                                 .show()
                                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                                 startActivity(intent)
