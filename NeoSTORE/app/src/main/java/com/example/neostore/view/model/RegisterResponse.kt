@@ -1,9 +1,25 @@
 package com.example.neostore.view.model
 
+data class RegisterResponse(
 
-data class RegisterUserDataInput(
+    val status: Int,
+    val data: RegisterDataItems,
+    val message: String,
+    val user_msg: String
 
-//    @SerializedName("id") val id: Int,
+)
+
+data class RegisterDataItems(
+
+    val first_name: String,
+    val last_name: String,
+    val email: String,
+    val password: String,
+    val confirm_password: String,
+    val gender: String,
+    val phone_no: String
+
+    //    @SerializedName("id") val id: Int,
 //    @SerializedName("role_id") val role_id: Int,
 //    @SerializedName("first_name") val first_name: String?,
 //    @SerializedName("last_name") val last_name: String?,
@@ -19,12 +35,5 @@ data class RegisterUserDataInput(
 //    @SerializedName("modified") val modified: String?,
 //    @SerializedName("access_token") val access_token: String?
 
-
-    val first_name : String,
-    val last_name : String,
-    val email : String,
-    val password : String,
-    val confirm_password : String,
-    val gender : String,
-    val phone_no : String
 )
+

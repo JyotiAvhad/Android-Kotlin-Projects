@@ -1,7 +1,7 @@
-package com.example.neostore.view.repository
+package com.example.neostore.view.network
 
 import com.example.neostore.view.model.LoginResponse
-import com.example.neostore.view.model.RegisterDataResponse
+import com.example.neostore.view.model.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -22,7 +22,7 @@ interface ApiInterface {
         @Field("gender") gender: String,
         @Field("phone_no") phone_no: String
 
-    ): Call<RegisterDataResponse>
+    ): Call<RegisterResponse>
 
     //login user
     @FormUrlEncoded

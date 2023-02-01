@@ -3,13 +3,13 @@ package com.example.neostore.view.model
 data class LoginResponse(
 
     val status: Int,
-    val data: LoginUserDataInput,
+    val data: LoginDataItems,
     val message: String,
     val user_msg: String
 
 )
 
-data class LoginUserDataInput(
+data class LoginDataItems(
 
     val id: Int,
     val role_id: Int,

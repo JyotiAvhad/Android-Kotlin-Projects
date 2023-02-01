@@ -1,4 +1,4 @@
-package com.example.neostore.view.viewmodel
+package com.example.neostore.view.repository
 
 import android.content.Context
 import android.util.Log
@@ -6,42 +6,56 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
-import com.example.neostore.view.model.LoginResponse
-import com.example.neostore.view.repository.RetrofitClient
+import com.example.neostore.view.model.RegisterResponse
+import com.example.neostore.view.network.RetrofitClient
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginViewModelRepo(val context: Context) : ViewModelProvider.NewInstanceFactory() {
+class RegisterViewModelRepo(val context: Context) : ViewModelProvider.NewInstanceFactory() {
 
     companion object {
 
-         var loginRepository: LoginViewModelRepo? = null
-         var mContext: Context? = null
+        var registerRepository: RegisterViewModelRepo? = null
+        var mContext: Context? = null
 
-        fun getInstance(context: Context): LoginViewModelRepo {
+        fun getInstance(context: Context): RegisterViewModelRepo {
 
             mContext = context
 
-            if (loginRepository == null) loginRepository = LoginViewModelRepo(context)
-            return loginRepository!!
+            if (registerRepository == null) registerRepository = RegisterViewModelRepo(context)
+            return registerRepository!!
         }
     }
 
-    fun loadLoginData(email: String, password: String): LiveData<LoginResponse?> {
-        val loginData= MutableLiveData<LoginResponse?>()
+    fun loadRegisterData(
+        firstName: String,
+        lastName: String,
+        email: String,
+        pwd: String,
+        confirmPwd: String
+    ): LiveData<RegisterResponse?> {
 
-        RetrofitClient.retrofit.loginUser(email, password)
-            .enqueue(object : Callback<LoginResponse> {
+        val registerData = MutableLiveData<RegisterResponse?>()
 
-                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+        RetrofitClient.retrofit.registerUser(
+            firstName,
+            lastName,
+            email,
+            pwd,
+            confirmPwd,
+            gender = "F",
+            phone_no = "9999999990"
+        ).enqueue(object : Callback<RegisterResponse> {
+
+                override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                     Log.d("onFailure", "" + t)
                 }
 
                 override fun onResponse(
-                    call: Call<LoginResponse>,
-                    response: Response<LoginResponse>
+                    call: Call<RegisterResponse>,
+                    response: Response<RegisterResponse>
                 ) {
                     var res = response
 
@@ -52,8 +66,8 @@ class LoginViewModelRepo(val context: Context) : ViewModelProvider.NewInstanceFa
                             Toast.LENGTH_LONG
                         ).show()
 
-                        val user=response.body()
-                        loginData.value=user
+                        val user = response.body()
+                        registerData.value = user
 
                     } else {
                         try {
@@ -70,7 +84,7 @@ class LoginViewModelRepo(val context: Context) : ViewModelProvider.NewInstanceFa
                     }
                 }
             })
-        return loginData
+        return registerData
     }
 
 }
